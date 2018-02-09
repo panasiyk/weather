@@ -1,4 +1,4 @@
-export default function cityReducer(state={city:[{id:702550,name:'Lviv'}]}, action){
+export default function cityReducer(state={city:[]}, action){
     switch(action.type){
         case 'ADD_NEW_CITY':{
             return {...state,city:[...state.city,action.cityObj]};

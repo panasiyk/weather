@@ -1,4 +1,4 @@
-export default function currentWeatherReducer(state={currentWeather:[{temp:'',windSpeed:'',humidity:'', weather:''}],isLoaded: false},action){
+export default function currentWeatherReducer(state={currentWeather:[{temp:'',windSpeed:'',humidity:'', weather:''}],isLoaded: true},action){
     switch(action.type){
         case 'FETCH_CURRENT_WEATHER':{
             let currentWeather=[];

@@ -5,8 +5,8 @@ body{
 .myName{
   color: gray;
   text-align: center;
-  font-size: 35px;
-  margin: 1.5% 0;
+  font-size: 40px;
+  margin: 1.5% 0 0.5%;
   font-family: Trebuchet MS, Tahoma, serif;
   font-weight: bold;
 }
@@ -17,9 +17,9 @@ body{
   display: inline-block;
 }
 input{
-  width: 35%;
-  font-size: 22px;
-  padding: 6px 0 4px 10px;
+  width: 45%;
+  font-size: 30px;
+  padding: 10px 0 6px 20px;
   border: 1px solid #cecece;
   border-right: 0;
   background: #F6F6f6;
@@ -28,13 +28,13 @@ input{
   color: #555555;
 }
 .add{
-  padding-top: 3px;
+  padding-top: 5px;
   cursor: pointer;
   font-family:  Helvetica, sans-serif;
   color: #555555;
-  font-size: 22px;
-  width: 5%;
-  height: 38px;
+  font-size: 30px;
+  width: 7%;
+  height: 52px;
   border: 1px solid #cecece;
   border-radius: 0 10px 10px 0;
   background: #F6F6f6;
@@ -45,9 +45,10 @@ input{
 }
 
 .list{
+  text-align: center;
   position: absolute;
-  left: 29.9%;
-  width: 35.2%;
+  left: 23.65%;
+  width: 45.7%;
   height: 300px;
   background: #F6F6f6;
   opacity: 0.8;
@@ -57,7 +58,7 @@ input{
   z-index: 2;
 }
 .liInDropMenu{
-  font-size: 22px;
+  font-size: 28px;
   font-family: Trebuchet MS, Tahoma, serif;
   margin: 0.5% 0.5% 0.5% 10px;
   font-weight: bold;
@@ -65,33 +66,35 @@ input{
 }
 
 .cantFind{
+  padding-top: 50px;
   z-index: 2;
   position: absolute;
-  left: 29.9%;
-  width: 35.2%;
-  height: 70px;
+  left: 23.65%;
+  width: 45.7%;
+  height: 90px;
   background: #F6F6f6;
   opacity: 0.8;
   border: 1px solid #cecece;
   border-radius: 0 0 10px 10px;
   text-align: center;
-  font-size: 25px;
+  font-size: 30px;
   font-family: Trebuchet MS, Tahoma, serif;
   font-weight: bold;
   overflow: hidden;
+  color: red;
 }
 .cities-container{
   margin-top: 2%;
 }
 .cities{
+  color: #607D8B;
   position:relative;
   margin: 0 10% 2% 10%;
-  height: 70px;
+  height: 100px;
   background-color: #f4f5dd;
   border: 1px solid #cecece;
   border-radius: 10px;
   overflow: hidden;
-  padding-top: 30px;
   padding-left: 30px;
   font-family:  Helvetica, sans-serif;
   font-size: 30px;
@@ -100,6 +103,7 @@ input{
 }
 
 .link {
+  padding-top: 30px;
   float: left;
   color: gray;
   font-weight: bold;
@@ -117,12 +121,20 @@ input{
   top: 20%;
 }
 .weather-container{
-  margin-left: 10%;
+  pointer-events: none;
+  margin-top: 10px;
+  margin-left: 21%;
   width: 70%;
   overflow: hidden;
 }
 .weather{
+  padding-top: 20px;
+  width: 125px;
   float: left;
-  margin:0 6%;
-  width: 100px;
+  margin-right: 9%;
+}
+
+.weatherIcon{
+  pointer-events: none;
+  float: left;
 }

@@ -38,7 +38,7 @@ class TopPart extends Component {
             <div>
                 <p className={'myName'}>The weather from Andrii Panasiuk</p>
                 <div className={'inputButton'}>
-                    <input placeholder={'Find the otherFiles'} onChange={this.getWord} ref={input=>this.mainInput=input} value={this.props.inputText}/>
+                    <input placeholder={'Find your city'} onChange={this.getWord} ref={input=>this.mainInput=input} value={this.props.inputText}/>
                     <button className={'add'} onClick={this.addCity}>Add</button>
                 </div>
                 <div className={'cantFind'} style={{display: ((this.props.listOfCities.length === 0 && this.props.inputText.length !== 0) ? "block" : "none")}}>Can't find this city</div>
