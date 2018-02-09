@@ -1,7 +1,7 @@
-export const addNewCity = (city) =>{
+export const addNewCity = (cityObj) =>{
     return{
         type: 'ADD_NEW_CITY',
-        city
+        cityObj
     }
 };
 export const deleteCity = (city) =>{

@@ -15,12 +15,19 @@ class City extends Component {
     }
 
     render() {
+        let _this =this;
         return (
             <div className={'cities-container'}>
-                {this.props.cities.map((city,i) =>
+                {_this.props.cities.map((city,i) =>
                     <div className={'cities'} key={i}>
-                        <NavLink to={`/city/${city}`} className="link" >{city}</NavLink>
-                        <img className={'garbage'} src={garbage} alt="deleteCity" onClick={()=>this.deleteCity(city)}/>
+                        <NavLink to={`/city/${city.name}`} className="link" >{city.name}</NavLink>
+                        <div className={"weather-container"}>
+                            <div className={"temp"}>{_this.props.currentWeather[i].temp}</div>
+                            <div className={"windSpeed"}>{_this.props.currentWeather[i].windSpeed}</div>
+                            <div className={"humidity"}>{_this.props.currentWeather[i].humidity}</div>
+                            <div className={"weather"}>{_this.props.currentWeather[i].weather}</div>
+                        </div>
+                        <img className={'garbage'} src={garbage} alt="deleteCity" onClick={()=>_this.deleteCity(city.name)}/>
                     </div>
                 )}
             </div>
@@ -29,7 +36,8 @@ class City extends Component {
 }
 const mapStateToProps =(state) => {
     return{
-        cities: state.cityReducer.cityName,
+        cities: state.cityReducer.city,
+        currentWeather: state.currentWeatherReducer.currentWeather
     }
 };
 const mapDispatchToProps =(dispatch) => {

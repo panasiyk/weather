@@ -24,7 +24,7 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
         <div>
             <Route exact path='/' component={App}/>
-            <Route path='/city/:cityName' component={City}/>
+            <Route path='/city/:city' component={City}/>
         </div>
     </ConnectedRouter>
 </Provider>,

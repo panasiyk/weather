@@ -9,9 +9,8 @@ const City = ({city}) => (
 );
 
 const mapStateToProps = (state, ownProps) =>{
-    console.log();
     return {
-        city: state.cityReducer.cityName.find(name => name === ownProps.match.params.cityName)
+        city: ownProps.match.params.city
     }
 };
 

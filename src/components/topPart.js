@@ -6,19 +6,25 @@ import {addNewCity} from "../actions/actionForCityReducer";
 import json from '../otherFiles/listOfCities';
 
 class TopPart extends Component {
+    cityObj;
+
     constructor(props){
         super(props);
         this.getWord = this.getWord.bind(this);
         this.addCity = this.addCity.bind(this);
+        this.checkTheCity = this.checkTheCity.bind(this);
     }
     getWord() {
         this.props.show(this.mainInput.value);
     }
+    checkTheCity(obj){
+        this.cityObj=obj;
+        return obj.name.toLowerCase() === this.mainInput.value.toLowerCase();
+    }
     addCity() {
-        if (json.find(obj => obj.name.toLowerCase() === this.mainInput.value.toLowerCase())) {
-            if(this.props.cities.indexOf(this.mainInput.value.slice(0, 1).toUpperCase() + this.mainInput.value.slice(1)) === -1) {
-                this.props.addNewCity(this.mainInput.value.slice(0, 1).toUpperCase() + this.mainInput.value.slice(1));
-
+        if (json.find(this.checkTheCity)) {
+            if(this.props.cities.find(el=>el.name === this.mainInput.value.slice(0, 1).toUpperCase() + this.mainInput.value.slice(1)) === undefined || this.props.cities.length === 0) {
+                this.props.addNewCity(this.cityObj);
             }
             else alert('it is already');
         }
@@ -39,7 +45,7 @@ class TopPart extends Component {
 
 const mapStateToProps =(state) => {
     return{
-        cities: state.cityReducer.cityName,
+        cities: state.cityReducer.city,
         listOfCities: state.dropListReducer.listOfCities,
         inputText: state.dropListReducer.inputText
     }
@@ -48,7 +54,7 @@ const mapStateToProps =(state) => {
 const mapDispatchToProps =(dispatch) => {
     return{
         show: (pathOfCity) => dispatch(showList(pathOfCity)),
-        addNewCity: (city) => dispatch(addNewCity(city)),
+        addNewCity: (cityObj) => dispatch(addNewCity(cityObj)),
     }
 };
 

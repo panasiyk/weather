@@ -1,29 +1,49 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
+import Loading from 'react-loading-animation';
 import TopPart from '../components/topPart';
 import DropDownMenu from './dropDownMenu';
 import City from './city';
 import '../otherFiles/App.css';
-import {fetchCurrentWeather} from "../actions/actionForCurrentWeather";
+import {fetchCurrentWeather, loading} from "../actions/actionForCurrentWeather";
 
 class App extends Component {
-    componentWillMount(){
-        this.props.fetchCurrentWeather();
+    componentDidMount(){
+            this.props.fetchCurrentWeather(this.props.cities);
     }
+    componentWillReceiveProps(nextProps){
+          if(this.props.cities.length !== nextProps.cities.length) {
+            this.props.loading();
+            // this.props.fetchCurrentWeather(nextProps.cities);
+          }
+    }
+
     render() {
-        return (
-            <div className={'mainBack'}>
-                <TopPart/>
-                <DropDownMenu/>
-                <City/>
-            </div>
-        );
+        if (!this.props.isLoaded) {
+            return <Loading/>;
+        }
+        else {
+            return (
+                <div className={'mainBack'}>
+                    <TopPart/>
+                    <DropDownMenu/>
+                    <City/>
+                </div>
+            );
+        }
     }
 }
+const mapStateToProps = (state) =>{
+    return{
+        cities: state.cityReducer.city,
+        isLoaded: state.currentWeatherReducer.isLoaded
+    }
+};
 const mapDispatchToProps = (dispatch) =>{
     return{
-        fetchCurrentWeather: () => dispatch(fetchCurrentWeather()),
+        fetchCurrentWeather: (cities) => dispatch(fetchCurrentWeather(cities)),
+        loading: () => dispatch(loading()),
     }
 };
 
-export default connect(null,mapDispatchToProps)(App);
+export default connect(mapStateToProps,mapDispatchToProps)(App);
