@@ -10,24 +10,44 @@ body{
   font-family: Trebuchet MS, Tahoma, serif;
   font-weight: bold;
 }
+.inputButton{
+  margin-top: 1%;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
 input{
-  position: fixed;
-  left: 27.5%;
-  margin: 0 2.5%;
   width: 35%;
   font-size: 22px;
   padding: 6px 0 4px 10px;
   border: 1px solid #cecece;
+  border-right: 0;
   background: #F6F6f6;
   border-radius: 8px 0 0 0;
   outline:none;
   color: #555555;
 }
+.add{
+  padding-top: 3px;
+  cursor: pointer;
+  font-family:  Helvetica, sans-serif;
+  color: #555555;
+  font-size: 22px;
+  width: 5%;
+  height: 38px;
+  border: 1px solid #cecece;
+  border-radius: 0 10px 10px 0;
+  background: #F6F6f6;
+  outline:none;
+}
+.add:hover{
+  background: #e2e2e2;
+}
+
 .list{
-  position: fixed;
-  left: 27.5%;
-  margin: 2% 2.5%;
-  width: 35.5%;
+  position: absolute;
+  left: 29.9%;
+  width: 35.2%;
   height: 300px;
   background: #F6F6f6;
   opacity: 0.8;
@@ -44,31 +64,11 @@ input{
   opacity: 1;
 }
 
-.add{
-  cursor: pointer;
-  font-family:  Helvetica, sans-serif;
-  color: #555555;
-  font-size: 22px;
-  position: fixed;
-  left: 63%;
-  width: 5%;
-  height: 38px;
-  margin: 0 2.5%;
-  border: 1px solid #cecece;
-  border-radius: 0 10px 10px 0;
-  background: #F6F6f6;
-  outline:none;
-}
-.add:hover{
-  background: #e2e2e2;
-}
 .cantFind{
   z-index: 2;
-  position: fixed;
-  padding-top: 1%;
-  left: 27.5%;
-  margin: 2% 2.5%;
-  width: 35.5%;
+  position: absolute;
+  left: 29.9%;
+  width: 35.2%;
   height: 70px;
   background: #F6F6f6;
   opacity: 0.8;
@@ -81,12 +81,12 @@ input{
   overflow: hidden;
 }
 .cities-container{
-  margin-top: 5%;
+  margin-top: 2%;
 }
 .cities{
   position:relative;
   margin: 0 10% 2% 10%;
-  height: 200px;
+  height: 70px;
   background-color: #f4f5dd;
   border: 1px solid #cecece;
   border-radius: 10px;
@@ -100,6 +100,7 @@ input{
 }
 
 .link {
+  float: left;
   color: gray;
   font-weight: bold;
   text-decoration: none;
@@ -114,4 +115,14 @@ input{
   position: absolute;
   right: 1%;
   top: 20%;
+}
+.weather-container{
+  margin-left: 10%;
+  width: 70%;
+  overflow: hidden;
+}
+.weather{
+  float: left;
+  margin:0 6%;
+  width: 100px;
 }

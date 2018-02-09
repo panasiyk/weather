@@ -4,6 +4,7 @@ import '../otherFiles/App.css';
 import { showList} from "../actions/actionForListOfCities";
 import {addNewCity} from "../actions/actionForCityReducer";
 import json from '../otherFiles/listOfCities';
+import {loading} from "../actions/actionForCurrentWeather";
 
 class TopPart extends Component {
     cityObj;
@@ -24,6 +25,7 @@ class TopPart extends Component {
     addCity() {
         if (json.find(this.checkTheCity)) {
             if(this.props.cities.find(el=>el.name === this.mainInput.value.slice(0, 1).toUpperCase() + this.mainInput.value.slice(1)) === undefined || this.props.cities.length === 0) {
+                this.props.loading();
                 this.props.addNewCity(this.cityObj);
             }
             else alert('it is already');
@@ -35,8 +37,10 @@ class TopPart extends Component {
         return (
             <div>
                 <p className={'myName'}>The weather from Andrii Panasiuk</p>
-                <input placeholder={'Find the otherFiles'} onChange={this.getWord} ref={input=>this.mainInput=input} value={this.props.inputText}/>
-                <button className={'add'} onClick={this.addCity}>Add</button>
+                <div className={'inputButton'}>
+                    <input placeholder={'Find the otherFiles'} onChange={this.getWord} ref={input=>this.mainInput=input} value={this.props.inputText}/>
+                    <button className={'add'} onClick={this.addCity}>Add</button>
+                </div>
                 <div className={'cantFind'} style={{display: ((this.props.listOfCities.length === 0 && this.props.inputText.length !== 0) ? "block" : "none")}}>Can't find this city</div>
             </div>
         );
@@ -55,6 +59,7 @@ const mapDispatchToProps =(dispatch) => {
     return{
         show: (pathOfCity) => dispatch(showList(pathOfCity)),
         addNewCity: (cityObj) => dispatch(addNewCity(cityObj)),
+        loading: () => dispatch(loading()),
     }
 };
 

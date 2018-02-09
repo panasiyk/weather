@@ -5,16 +5,15 @@ import TopPart from '../components/topPart';
 import DropDownMenu from './dropDownMenu';
 import City from './city';
 import '../otherFiles/App.css';
-import {fetchCurrentWeather, loading} from "../actions/actionForCurrentWeather";
+import {fetchCurrentWeather} from "../actions/actionForCurrentWeather";
 
 class App extends Component {
     componentDidMount(){
             this.props.fetchCurrentWeather(this.props.cities);
     }
     componentWillReceiveProps(nextProps){
-          if(this.props.cities.length !== nextProps.cities.length) {
-            this.props.loading();
-            // this.props.fetchCurrentWeather(nextProps.cities);
+          if(this.props.cities.length !== nextProps.cities.length && nextProps.cities.length !== 0) {
+             this.props.fetchCurrentWeather(nextProps.cities);
           }
     }
 
@@ -42,7 +41,6 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) =>{
     return{
         fetchCurrentWeather: (cities) => dispatch(fetchCurrentWeather(cities)),
-        loading: () => dispatch(loading()),
     }
 };
 

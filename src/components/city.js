@@ -14,6 +14,7 @@ class City extends Component {
         this.props.deleteCity(city)
     }
 
+
     render() {
         let _this =this;
         return (
@@ -22,9 +23,9 @@ class City extends Component {
                     <div className={'cities'} key={i}>
                         <NavLink to={`/city/${city.name}`} className="link" >{city.name}</NavLink>
                         <div className={"weather-container"}>
-                            <div className={"temp"}>{_this.props.currentWeather[i].temp}</div>
-                            <div className={"windSpeed"}>{_this.props.currentWeather[i].windSpeed}</div>
-                            <div className={"humidity"}>{_this.props.currentWeather[i].humidity}</div>
+                            <div className={"weather"}>{_this.props.currentWeather[i].temp}</div>
+                            <div className={"weather"}>{_this.props.currentWeather[i].windSpeed}</div>
+                            <div className={"weather"}>{_this.props.currentWeather[i].humidity}</div>
                             <div className={"weather"}>{_this.props.currentWeather[i].weather}</div>
                         </div>
                         <img className={'garbage'} src={garbage} alt="deleteCity" onClick={()=>_this.deleteCity(city.name)}/>

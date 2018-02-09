@@ -16,8 +16,8 @@ class DropDownMenu extends Component {
 
     render() {
         return (
-            <div className={'list'} style={{display: ((this.props.showList && this.props.listOfCities.length !== 0) ? "block" : "none")}}>
-                <div>
+            <div className={'listContainer'}>
+                <div className={'list'} style={{display: ((this.props.showList && this.props.listOfCities.length !== 0) ? "block" : "none")}}>
                     {(this.props.listOfCities !== "")?this.props.listOfCities.map((el,i)=>
                         <div className={'liInDropMenu'} key={i} onClick={()=>this.selectCityInList(el.name)}>{el.name}</div>):null}
                 </div>
