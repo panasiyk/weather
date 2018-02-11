@@ -13,6 +13,9 @@ export default function cityReducer(state={city:[]}, action){
             arrayOfCities.splice(index,1);
             return {...state,city:arrayOfCities};
         }
+        case 'CITIES_FROM_LOCAL_STORAGE':{
+            return {...state,city:action.arrayOfCities};
+        }
         default:
             return state;
     }

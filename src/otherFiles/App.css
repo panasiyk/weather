@@ -1,9 +1,10 @@
 
 body{
-  background-color: #FFECB3;
+  background-color: #607D8B;
+  margin: 0;
 }
 .myName{
-  color: gray;
+  color: #e0e1c9;
   text-align: center;
   font-size: 40px;
   margin: 1.5% 0 0.5%;
@@ -47,8 +48,8 @@ input{
 .list{
   text-align: center;
   position: absolute;
-  left: 23.65%;
-  width: 45.7%;
+  left: 23.45%;
+  width: 46.05%;
   height: 300px;
   background: #F6F6f6;
   opacity: 0.8;
@@ -69,8 +70,8 @@ input{
   padding-top: 50px;
   z-index: 2;
   position: absolute;
-  left: 23.65%;
-  width: 45.7%;
+  left: 23.45%;
+  width: 46.05%;
   height: 90px;
   background: #F6F6f6;
   opacity: 0.8;

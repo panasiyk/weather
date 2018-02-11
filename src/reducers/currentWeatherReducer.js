@@ -10,6 +10,9 @@ export default function currentWeatherReducer(state={currentWeather:[{temp:'',wi
         case 'LOADING':{
             return {...state,isLoaded: false};
         }
+        case 'CURRENT_WEATHER_FROM_LOCAL_STORAGE':{
+            return {...state,currentWeather: action.arrayOfWeather};
+        }
         default:
             return state;
     }

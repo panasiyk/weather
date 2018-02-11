@@ -10,3 +10,16 @@ export const deleteCity = (city) =>{
         city
     }
 };
+
+export const citiesFromLocalStorage = (arrayOfCities) =>{
+    return{
+        type: 'CITIES_FROM_LOCAL_STORAGE',
+        arrayOfCities
+    }
+};
+export const currentWeatherFromLocalStorage = (arrayOfWeather) =>{
+    return{
+        type: 'CURRENT_WEATHER_FROM_LOCAL_STORAGE',
+        arrayOfWeather
+    }
+};
