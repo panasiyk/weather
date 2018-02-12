@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { message } from 'antd';
+import 'antd/dist/antd.css'
 import '../otherFiles/App.css';
 import { showList} from "../actions/actionForListOfCities";
 import {addNewCity} from "../actions/actionForCityReducer";
@@ -22,15 +24,18 @@ class TopPart extends Component {
         this.cityObj=obj;
         return obj.name.toLowerCase() === this.mainInput.value.toLowerCase();
     }
+    troubles(massage){
+        message.error(massage);
+    }
     addCity() {
         if (json.find(this.checkTheCity)) {
             if(this.props.cities.find(el=>el.name === this.mainInput.value.slice(0, 1).toUpperCase() + this.mainInput.value.slice(1)) === undefined || this.props.cities.length === 0) {
                 this.props.loading();
                 this.props.addNewCity(this.cityObj);
             }
-            else alert('it is already');
+            else this.troubles('This city already exists');
         }
-        else alert('error');
+        else this.troubles('Error With Find City');
     }
 
     render() {

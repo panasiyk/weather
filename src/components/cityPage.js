@@ -50,7 +50,7 @@ class City extends Component{
                                         <img className={'icon'} src={thermometer} alt="thermometer"/>
                                         <img className={'icon'} src={wind} alt="wind"/>
                                         <img className={'icon'} src={humidity} alt="humidity"/>
-                                        <div className={'icon'}>Weather</div>
+                                        <div className={'icon'} id={'Weather'}>Weather</div>
                                     </div>
                                     <div className={'weatherListContainer'}>
                                         <OneForecastDay el={el}/>

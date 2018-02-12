@@ -17,7 +17,7 @@
 .oneDay{
     color: #607D8B;
     font-family:  Helvetica, sans-serif;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     background-color: #f4f5dd;
     border: 1px solid #cecece;
@@ -55,6 +55,11 @@
     float: left;
     margin-left: 13%;
 }
+#Weather{
+    font-size: 25px;
+    margin-top: 13px;
+    margin-left: 12%;
+}
 .weatherListContainer{
     margin-top: 6%;
 }
@@ -67,14 +72,14 @@
     margin-bottom: 1%;
 }
 .time{
-    margin-left: 3%;
+    margin-left: 4%;
     display: inline-block;
 }
 .temp,.speed,.humidity,.mainWeather{
     text-align: center;
     width: 130px;
     display: inline-block;
-    margin-left: 12%;
+    margin-left: 13%;
 }
 .speed{
     margin-left: 11%;
@@ -83,5 +88,5 @@
     margin-left: 10.5%;
 }
 .mainWeather{
-    margin-left: 12.5%;
+    margin-left: 11%;
 }

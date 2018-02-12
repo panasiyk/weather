@@ -1,5 +1,6 @@
 
 body{
+  overflow: auto;
   background-color: #607D8B;
   margin: 0;
 }
@@ -19,8 +20,8 @@ body{
 }
 input{
   width: 45%;
-  font-size: 30px;
-  padding: 10px 0 6px 20px;
+  font-size: 28px;
+  padding: 5px 0 3px 20px;
   border: 1px solid #cecece;
   border-right: 0;
   background: #F6F6f6;
@@ -29,7 +30,7 @@ input{
   color: #555555;
 }
 .add{
-  padding-top: 5px;
+  padding-top: 4px;
   cursor: pointer;
   font-family:  Helvetica, sans-serif;
   color: #555555;
@@ -48,18 +49,18 @@ input{
 .list{
   text-align: center;
   position: absolute;
-  left: 23.45%;
-  width: 46.05%;
+  left: 24%;
+  width: 45.05%;
   height: 300px;
   background: #F6F6f6;
   opacity: 0.8;
   border: 1px solid #cecece;
   border-radius: 0 0 10px 10px;
-  overflow: hidden;
+  overflow: auto;
   z-index: 2;
 }
 .liInDropMenu{
-  font-size: 28px;
+  font-size: 30px;
   font-family: Trebuchet MS, Tahoma, serif;
   margin: 0.5% 0.5% 0.5% 10px;
   font-weight: bold;
@@ -70,9 +71,9 @@ input{
   padding-top: 50px;
   z-index: 2;
   position: absolute;
-  left: 23.45%;
-  width: 46.05%;
-  height: 90px;
+  left: 24%;
+  width: 45.05%;
+  height: 140px;
   background: #F6F6f6;
   opacity: 0.8;
   border: 1px solid #cecece;
